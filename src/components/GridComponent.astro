@@ -1,0 +1,52 @@
+---
+// Tabla ocupando gridjs 
+---
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css">
+    <script type="module">
+      import { Grid,h } from "https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.production.es.min.js";
+
+      document.addEventListener('DOMContentLoaded', function() {
+        new Grid({
+          columns: [
+            {
+              name: 'Name',
+              formatter: (cell) => cell.firstName
+            },
+            'Email',
+            'Phone Number',
+            { 
+        name: 'Actions',
+        formatter: (cell, row) => {
+            return h('button', {
+             className: 'py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none',
+             onClick: () => alert(`Editing "${row.cells[0].data}" "${row.cells[1].data}"`)
+           }, 'Edit');
+          }
+        },
+          ],
+          sort: true,
+          pagination: true,
+          search: {
+            selector: (cell, rowIndex, cellIndex) => cellIndex === 0 ? cell.firstName : cell
+          },
+          data: [
+            [{ firstName: 'John', lastName: 'MP' }, 'john@example.com', '(353) 01 222 3333', null],
+            [{ firstName: 'Mark', lastName: 'Blue' }, 'mark@gmail.com', '(01) 22 888 4444', null],
+            [{ firstName: 'Eoin', lastName: 'Kavanagh' }, 'eo3n@yahoo.com', '(05) 10 878 5554', null],
+            [{ firstName: 'Megan', lastName: 'Niesen' }, 'nis900@gmail.com', '313 333 1923', null]
+          ]
+        }).render(document.getElementById('grid'));
+      });
+
+      function editar() {
+        // Implementa aquí la lógica para editar el usuario
+        alert('Editar usuario');
+      }
+    </script>
+  </head>
+  <body>
+    <div id="grid"></div>
+  </body>
+</html>

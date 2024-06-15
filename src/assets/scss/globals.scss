@@ -6,7 +6,9 @@
 @use "base/root";
 @use "base/font";
 @use "base/list";
-
 @use "base/auto-grid";
 @use "base/grid";
 @use "base/utility";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

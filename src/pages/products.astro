@@ -1,28 +1,28 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import EmpyState from '../components/EmpyState.astro'
-import { Modal } from 'accessible-astro-components'
+import { Modal, Notification } from 'accessible-astro-components'
+import GridComponent from '../components/GridComponent.astro';
 ---
 
-<DefaultLayout title="Products">
+<DefaultLayout title="Productos">
   <section>
-    <h1>Products</h1><br>
-    <p class="size-20">Lorem ipsum dolor sit amet.</p>
+    <h1>Productos</h1><br>
   </section>
   <section class="margin-32">
     <div class="space-content">
-      <h2>Product overview</h2>
-      <EmpyState>
-        You haven't added any products yet. Start by adding some.
-      </EmpyState>
-      <button id="modal-trigger" class="button color-secondary">Add your first product</button>
+      <h2 class="text-9xl">Resumen del Producto</h2>
+      <GridComponent/> {/* Aquí estás usando el componente DataTable */}
+      <button id="modal-trigger" class="button color-secondary">Agregar su primer producto</button>
       <Modal
         triggerId="modal-trigger"
-        title="Add product"
-        closeText="Cancel"
+        title="Agregar producto"
+        closeText="Cancelar"
       >
-        <p>You can use this component to include a form that adds a new product to the list.</p>
+        <p>Puede usar este componente para incluir un formulario que agregue un nuevo producto a la lista.</p>
       </Modal>
     </div>
   </section>
 </DefaultLayout>
+
+

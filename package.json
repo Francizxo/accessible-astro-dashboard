@@ -11,11 +11,17 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/react": "^3.5.0",
+    "@astrojs/tailwind": "^5.1.0",
     "accessible-astro-components": "^1.5.7",
-    "astro-icon": "^0.7.3"
+    "astro-icon": "^0.7.3",
+    "faker": "^6.6.6",
+    "gridjs": "^6.2.0",
+    "preline": "^2.3.0"
   },
   "devDependencies": {
-    "astro": "^1.4.4",
-    "sass": "^1.49.9"
+    "astro": "^4.10.2",
+    "sass": "^1.49.9",
+    "tailwindcss": "^3.4.4"
   }
 }
